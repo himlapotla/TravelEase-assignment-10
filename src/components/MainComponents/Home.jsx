@@ -7,7 +7,7 @@ const Home = () => {
     const [vehicles, setVehicles] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/show-all-vehicles')
+        axios.get('http://localhost:3000/show-all-vehicles-six')
             .then(res => {
                 setVehicles(res.data)
             })
@@ -15,7 +15,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className='grid grid-cols-4 gap-3'>
+            <div className='grid grid-cols-4 gap-3 w-11/12 mx-auto pt-10'>
                 {
                     vehicles.map(vehicles => <ShowSix vehicles={vehicles}> </ShowSix>)
                 }
