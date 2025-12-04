@@ -7,6 +7,8 @@ import AddVehicles from "../components/VehiclesComponent/AddVehicles";
 import AllVehicles from "../components/VehiclesComponent/AllVehicles";
 import MyBooking from "../components/VehiclesComponent/MyBooking";
 import MyVehicles from "../components/VehiclesComponent/MyVehicles";
+import Details from "../components/MainComponents/Details";
+import Update from "../components/VehiclesComponent/Update";
 
 export const allRoutes = createBrowserRouter([
 
@@ -41,6 +43,15 @@ export const allRoutes = createBrowserRouter([
             {
                 path: '/myVehicles',
                 element: <MyVehicles> </MyVehicles>
+            },
+            {
+                path: '/detailVehicles/:id',
+                element: <Details> </Details>
+            },
+            {
+                path: '/update/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/vehicles/${params.id}`),
+                element: <Update> </Update>
             }
         ]
     },
