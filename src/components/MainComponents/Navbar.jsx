@@ -56,7 +56,7 @@ const Navbar = () => {
 
                 <div className="navbar-end gap-3">
                     {
-                        <img className='w-3/12 md:w-2/12 lg:w-1/12 rounded-4xl cursor-pointer' title={user ? user.displayName : ' '} src={user && user.photoURL } alt="" />
+                        <img className='w-3/12 md:w-2/12 lg:w-1/12 rounded-4xl cursor-pointer' title={user ? user.displayName : ' '} src={user ? user.photoURL : 'nai' } alt="" />
                     }
 
                     {

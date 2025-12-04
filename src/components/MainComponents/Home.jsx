@@ -1,12 +1,28 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import ShowSix from './ShowSix'
 
 const Home = () => {
-  return (
-    <div>
 
-        this is sweet Homeeeeeeeeeeeeee.!
-    </div>
-  )
+    const [vehicles, setVehicles] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/show-all-vehicles')
+            .then(res => {
+                setVehicles(res.data)
+            })
+    }, [])
+
+    return (
+        <div>
+            <div className='grid grid-cols-4 gap-3'>
+                {
+                    vehicles.map(vehicles => <ShowSix vehicles={vehicles}> </ShowSix>)
+                }
+
+            </div>
+        </div>
+    )
 }
 
 export default Home
