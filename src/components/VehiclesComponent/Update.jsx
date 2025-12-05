@@ -20,7 +20,7 @@ const Update = () => {
             vehicleName: form.vehicleName.value,
             ownerName: form.ownerName.value,
             category: form.category.value,
-            pricePerDay: Number(form.pricePerDay.value),
+            pricePerDay: form.pricePerDay.value,
             location: form.location.value,
             availability: form.availability.value,
             description: form.description.value,
@@ -40,7 +40,7 @@ const Update = () => {
         <div>
 
             <form onSubmit={handleUpdate} className="max-w-2xl mx-auto p-6 bg-white shadow-xl rounded-xl space-y-3 mt-10">
-                <p className='text-3xl font-bold'>Add your Vehicles</p>
+                <p className='text-3xl font-bold'>Update your Vehicle</p>
                 {/* Vehicle Name */}
                 <div>
                     <label className="block font-semibold mb-1">Vehicle Name</label>
@@ -161,7 +161,7 @@ const Update = () => {
                     type="submit"
                     className="w-full py-3 bg-amber-400 text-white font-semibold rounded-lg"
                 >
-                    Submit Vehicle
+                    Update
                 </button>
             </form>
 

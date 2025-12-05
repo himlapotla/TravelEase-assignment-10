@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ShowSix from './ShowSix'
 import Hero from './Hero'
 import TopVehicles from './TopVehicles'
+import About from './About'
 
 const Home = () => {
 
@@ -20,6 +21,10 @@ const Home = () => {
 
             <Hero> </Hero>
 
+            <About> </About>
+
+            <p className='text-amber-400 text-4xl font-bold text-center '> Explore oue leatest vehicles </p>
+
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 w-11/12 mx-auto pt-10'>
                 {
                     vehicles.map(vehicles => <ShowSix vehicles={vehicles}> </ShowSix>)
@@ -30,6 +35,8 @@ const Home = () => {
             <p className='text-amber-400 text-4xl font-bold text-center pt-21 pb-15'> Check out our most demandable vehicles </p>
 
             <TopVehicles> </TopVehicles>
+
+            
         </div>
     )
 }

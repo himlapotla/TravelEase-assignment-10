@@ -4,38 +4,32 @@ import { Link } from 'react-router'
 const ShowAllVehicles = ({ vehicles }) => {
     return (
 
+        <div >
 
-        <div className="max-w-sm w-full bg-white rounded-2xl shadow-lg p-3 mx-auto h-full border-3 border-amber-400">
+            <div className="max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-xl mt-10 border-3 border-amber-400 ">
+                <div className="w-full h-60 overflow-hidden rounded-lg mb-4">
+                    <img src={vehicles.coverImage} className="w-full h-full object-cover" />
+                </div>
 
-            <div className="w-full h-56 overflow-hidden rounded-xl mb-4">
-                <img
-                    src={vehicles.image}
-                    alt={vehicles.name}
-                    className="w-full h-full object-cover"
-                />
+                <h2 className="text-xl font-bold mb-2">vehicle name: {vehicles.vehicleName}</h2>
+                <p><span className="font-semibold">Owner:</span> {vehicles.ownerName || vehicles.owner}</p>
+                <p><span className="font-semibold">Category:</span> {vehicles.category}</p>
+                <p><span className="font-semibold">Price Per Day:</span> {vehicles.pricePerDay} BDT</p>
+                <p><span className="font-semibold">Location:</span> {vehicles.location}</p>
+                <p><span className="font-semibold">Availability:</span> {vehicles.availability}</p>
+                <p className="mt-2"><span className="font-semibold">Description:</span> {vehicles.description}</p>
+
+                <Link to={`/detailVehicles/${vehicles._id}`}> <button className='btn font-semibold bg-amber-400 w-full '> View Details </button> </Link>
+
+
             </div>
-
-            <h2 className="text-xl font-semibold text-gray-800">vehicleName: {vehicles.vehicleName}</h2>
-            <p className="text-sm text-emerald-600 font-medium">
-                {vehicles.specialization}
-            </p>
-
-            <p className="text-gray-700 mt-2">
-                <span className="font-semibold">Experience:</span> {vehicles.experience} years
-            </p>
-
-            <p className="text-gray-700">
-                <span className="font-semibold">Education:</span> {vehicles.education}
-            </p>
-
-            <p className="text-gray-900 mt-3 font-semibold">
-                Number: {vehicles.phone}
-            </p>
-
-            <Link to={`/detailVehicles/${vehicles._id}`}> <button className='btn font-semibold bg-amber-400 w-full '> View Details </button> </Link>
         </div>
 
     )
 }
 
 export default ShowAllVehicles
+
+
+
+

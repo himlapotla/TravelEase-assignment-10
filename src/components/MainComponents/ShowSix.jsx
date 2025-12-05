@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router'
 
 const ShowSix = ({ vehicles }) => {
 
@@ -6,7 +7,7 @@ const ShowSix = ({ vehicles }) => {
 
         <div >
 
-            <div className="max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-xl mt-10 border-3 border-amber-400 h-full">
+            <div className="max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-xl mt-10 border-3 border-amber-400">
                 <div className="w-full h-60 overflow-hidden rounded-lg mb-4">
                     <img src={vehicles.coverImage} className="w-full h-full object-cover" />
                 </div>
@@ -18,6 +19,9 @@ const ShowSix = ({ vehicles }) => {
                 <p><span className="font-semibold">Location:</span> {vehicles.location}</p>
                 <p><span className="font-semibold">Availability:</span> {vehicles.availability}</p>
                 <p className="mt-2"><span className="font-semibold">Description:</span> {vehicles.description}</p>
+
+                <Link to={`/detailVehicles/${vehicles._id}`}> <button className='btn mt-2 font-semibold bg-amber-400 w-full '> View Details </button> </Link>
+
 
             </div>
         </div>
