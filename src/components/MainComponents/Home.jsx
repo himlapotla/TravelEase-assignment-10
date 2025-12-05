@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import ShowSix from './ShowSix'
 import Hero from './Hero'
+import TopVehicles from './TopVehicles'
 
 const Home = () => {
 
@@ -25,6 +26,10 @@ const Home = () => {
                 }
 
             </div>
+
+            <p className='text-amber-400 text-4xl font-bold text-center pt-21 pb-15'> Check out our most demandable vehicles </p>
+
+            <TopVehicles> </TopVehicles>
         </div>
     )
 }
