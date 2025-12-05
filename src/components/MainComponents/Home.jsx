@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import ShowSix from './ShowSix'
+import Hero from './Hero'
 
 const Home = () => {
 
@@ -15,7 +16,10 @@ const Home = () => {
 
     return (
         <div>
-            <div className='grid grid-cols-4 gap-3 w-11/12 mx-auto pt-10'>
+
+            <Hero> </Hero>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 w-11/12 mx-auto pt-10'>
                 {
                     vehicles.map(vehicles => <ShowSix vehicles={vehicles}> </ShowSix>)
                 }

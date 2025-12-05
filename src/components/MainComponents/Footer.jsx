@@ -9,7 +9,7 @@ const Footer = () => {
     };
 
     return (
-        <div className="w-full bg-gradient-to-r from-amber-400 to-amber-500 mt-16 pt-10 pb-4">
+        <div className="w-full bg-gradient-to-r from-amber-400 to-amber-500 mt-16 pt-11 pb-4">
 
             <div className="text-center mb-6">
                 <h2 className="text-3xl font-bold text-gray-800">Get In Touch</h2>
@@ -40,7 +40,7 @@ const Footer = () => {
                     <div>
                         <h3 className="font-bold text-2xl text-amber-700">TravelEase</h3>
                         <p className="text-gray-500 mt-2">
-                            Caring for your pets with love and expertise.
+                            Rent the vehicles in your afordable price.
                         </p>
 
 
@@ -70,7 +70,7 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold mb-3 text-lg">Contact Info</h4>
                         <ul className="space-y-2 text-gray-600">
-                            <li>Email: support@warmpaws.com</li>
+                            <li>Email: support@TravelEase.com</li>
                             <li>Phone: +880 1234-567890</li>
                             <li>Address: Dhaka, Bangladesh</li>
                             <li>Working Hours: 9 AM – 8 PM</li>
@@ -91,7 +91,7 @@ const Footer = () => {
             </div>
 
             <div className="text-center mt-10 text-gray-600 text-sm">
-                © 2025 WarmPaws. All rights reserved.
+                © 2025 TravelEase. All rights reserved.
             </div>
 
         </div>

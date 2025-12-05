@@ -13,6 +13,8 @@ const Login = () => {
   const [show, setShow] = useState(false)
 
   const location = useLocation()
+  console.log(location);
+  
 
   const showPass = () => {
     setShow(!show)
@@ -52,7 +54,7 @@ const Login = () => {
 
   return (
 
-    <form onSubmit={handleLogin} className='flex justify-center min-h-screen items-center'>
+    <form onSubmit={handleLogin} className='flex justify-center min-h-screen items-center pt-10'>
 
 
       <div className=' rounded-2xl shadow-2xl p-10 space-y-2'>

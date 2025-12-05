@@ -1,9 +1,33 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useContext } from 'react'
+import { AllContext } from '../Provider/AuthProvider'
 
-const ShowDetails = ( {vehicles} ) => {
+const ShowDetails = ({ vehicles }) => {
+
+    const {user} = useContext(AllContext)
+
+    const handleBook = () => {
+
+        const bookData = {
+            vehicleName: vehicles.vehicleName,
+            category: vehicles.category,
+            pricePerDay: Number(vehicles.pricePerDay),
+            coverImage: vehicles.coverImage,
+            userEmail: user.email,
+        }
+
+        axios
+            .post("http://localhost:3000/post-book", bookData)
+            .then((res) => {
+                console.log(res.data);
+            })
+
+
+    }
+
     return (
         <div>
-            <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
+            <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10 border-3 border-amber-400">
                 <div className="w-full h-80 overflow-hidden rounded-lg mb-4">
                     <img src={vehicles.coverImage} className="w-full h-full object-cover" />
                 </div>
@@ -15,9 +39,17 @@ const ShowDetails = ( {vehicles} ) => {
                 <p><span className="font-semibold">Location:</span> {vehicles.location}</p>
                 <p><span className="font-semibold">Availability:</span> {vehicles.availability}</p>
                 <p className="mt-2"><span className="font-semibold">Description:</span> {vehicles.description}</p>
+
+                {
+                    vehicles.availability === "available" ?
+                        (<button onClick={handleBook} className='btn font-semibold bg-amber-400 my-2'> Book Now </button>) :
+                        (<button disabled className='btn font-semibold bg-amber-400 my-2'> Not for Book </button>)
+                }
             </div>
         </div>
     )
 }
 
 export default ShowDetails
+
+{/*  */ }

@@ -9,6 +9,7 @@ import MyBooking from "../components/VehiclesComponent/MyBooking";
 import MyVehicles from "../components/VehiclesComponent/MyVehicles";
 import Details from "../components/MainComponents/Details";
 import Update from "../components/VehiclesComponent/Update";
+import PrivateRoute from "../components/Provider/PrivateRoute";
 
 export const allRoutes = createBrowserRouter([
 
@@ -30,7 +31,7 @@ export const allRoutes = createBrowserRouter([
             },
             {
                 path: '/addVehicle',
-                element: <AddVehicles> </AddVehicles>
+                element: <PrivateRoute> <AddVehicles> </AddVehicles> </PrivateRoute>
             },
             {
                 path: '/allVehicles',
@@ -38,15 +39,15 @@ export const allRoutes = createBrowserRouter([
             },
             {
                 path: '/myBookings',
-                element: <MyBooking> </MyBooking>
+                element: <PrivateRoute> <MyBooking> </MyBooking>  </PrivateRoute>
             },
             {
                 path: '/myVehicles',
-                element: <MyVehicles> </MyVehicles>
+                element: <PrivateRoute> <MyVehicles> </MyVehicles> </PrivateRoute>
             },
             {
                 path: '/detailVehicles/:id',
-                element: <Details> </Details>
+                element: <PrivateRoute> <Details> </Details> </PrivateRoute>
             },
             {
                 path: '/update/:id',
