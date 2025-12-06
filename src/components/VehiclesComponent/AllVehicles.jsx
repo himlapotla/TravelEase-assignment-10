@@ -1,3 +1,35 @@
+// import axios from 'axios'
+// import React, { useEffect, useState } from 'react'
+// import ShowAllVehicles from './ShowAllVehicles'
+
+// const AllVehicles = () => {
+
+//   const [vehicles, setVehicles] = useState([])
+
+//   useEffect(() => {
+//     axios.get('http://localhost:3000/show-all-vehicles')
+//       .then(res => {
+
+//         setVehicles(res.data)
+//         console.log(res.data);
+
+//       })
+//   }, [])
+
+//   return (
+//     <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-10 pb-13'>
+//       {
+//         vehicles.map(vehicles => <ShowAllVehicles vehicles={vehicles}> </ShowAllVehicles> )
+//       }
+//     </div>
+//   )
+// }
+
+// export default AllVehicles
+
+
+
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import ShowAllVehicles from './ShowAllVehicles'
@@ -5,22 +37,56 @@ import ShowAllVehicles from './ShowAllVehicles'
 const AllVehicles = () => {
 
   const [vehicles, setVehicles] = useState([])
+  const [filtered, setFiltered] = useState([])
+  const [sortType, setSortType] = useState("")
 
   useEffect(() => {
     axios.get('http://localhost:3000/show-all-vehicles')
       .then(res => {
-
         setVehicles(res.data)
-        console.log(res.data);
-        
+        setFiltered(res.data)
       })
   }, [])
 
+  useEffect(() => {
+    let sorted = [...vehicles]
+
+    if (sortType === "price-low") {
+      sorted.sort((a, b) => a.pricePerDay - b.pricePerDay)
+    }
+    else if (sortType === "price-high") {
+      sorted.sort((a, b) => b.pricePerDay - a.pricePerDay)
+    }
+
+    setFiltered(sorted)
+
+  }, [sortType, vehicles])
+
   return (
-    <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-10 pb-13'>
-      {
-        vehicles.map(vehicles => <ShowAllVehicles vehicles={vehicles}> </ShowAllVehicles> )
-      }
+    <div className='w-11/12 mx-auto pt-10'>
+
+      <div className="flex justify-end gap-4 mb-6">
+
+        <div className="bg-amber-400 p-1 rounded-lg">
+          <select
+            className=" text-white p-2 rounded-lg"
+            onChange={(e) => setSortType(e.target.value)}
+          >
+            <option value="">Sort by price</option>
+            <option value="price-low">Low → High</option>
+            <option value="price-high">High → Low</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10'>
+        {
+          filtered.map(v => <ShowAllVehicles key={v._id} vehicles={v} />)
+
+        }
+      </div>
+
     </div>
   )
 }
