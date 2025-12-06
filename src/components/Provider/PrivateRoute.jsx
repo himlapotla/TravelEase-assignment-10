@@ -7,8 +7,6 @@ const PrivateRoute = ( {children} ) => {
 
     const {user, loading} = useContext(AllContext)
     const location = useLocation()
-    console.log(location);
-    
 
     if(loading) {
         return <Loading> </Loading>

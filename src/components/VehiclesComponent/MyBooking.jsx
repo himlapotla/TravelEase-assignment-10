@@ -15,7 +15,6 @@ const MyBooking = () => {
       .then(res => {
 
         setVehicles(res.data)
-        console.log(res.data);
 
       })
   }, [])

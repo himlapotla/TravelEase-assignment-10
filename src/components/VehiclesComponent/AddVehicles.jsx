@@ -27,7 +27,6 @@ const AddVehicles = () => {
     axios
       .post("http://localhost:3000/post-vehicles", vehicleData)
       .then((res) => {
-        console.log(res.data);
         form.reset();
         toast.success("Vehicle is added successfully.")
       })

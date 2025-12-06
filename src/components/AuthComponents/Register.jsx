@@ -64,7 +64,6 @@ const Register = () => {
 
         })
         .catch((err) => {
-          console.log(err);
           
           setError('This user/email is already registered')
         })

@@ -10,7 +10,6 @@ const Update = () => {
     const { user } = useContext(AllContext)
     const data = useLoaderData()
     const {location, availability, vehicleName, ownerName, category, pricePerDay, description, coverImage,  } = data[0]
-    console.log(data);
     
 
     const handleUpdate = (e) => {
@@ -32,7 +31,6 @@ const Update = () => {
         axios
             .patch(`http://localhost:3000/vehicles-update/${id}`, updateData)
             .then((res) => {
-                console.log(res.data);
                 toast.success("Vehcile updated successfully.")
             })
     }

@@ -9,7 +9,6 @@ const MyVehicles = () => {
 
   const [Vehicles, setVehicles] = useState([])
   const { user, loading, setLoading } = useContext(AllContext)
-  console.log(user);
 
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const MyVehicles = () => {
       .then(res => {
 
         setVehicles(res.data)
-        console.log(res.data);
 
       })
   }, [user])

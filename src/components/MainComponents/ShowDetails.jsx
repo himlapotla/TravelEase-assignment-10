@@ -20,7 +20,6 @@ const ShowDetails = ({ vehicles }) => {
         axios
             .post("http://localhost:3000/post-book", bookData)
             .then((res) => {
-                console.log(res.data)
                 toast.success("This vehicle is booked.")
             })
     }

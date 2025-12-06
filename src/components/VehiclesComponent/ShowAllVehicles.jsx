@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const ShowAllVehicles = ({ vehicles }) => {
-
-    console.log('hiii',vehicles.coverImage)
+    
     return (
 
         <div >
