@@ -25,7 +25,7 @@ const MyBooking = () => {
     <div>
       {
         vehicles.length == 0 ? <Empty> </Empty> :
-          <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-2 pb-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-3 pt-2 pb-12'>
             {
               vehicles.map(vehicles => <ShowMyBooking vehicles={vehicles}> </ShowMyBooking>)
             }

@@ -10,6 +10,7 @@ import MyVehicles from "../components/VehiclesComponent/MyVehicles";
 import Details from "../components/MainComponents/Details";
 import Update from "../components/VehiclesComponent/Update";
 import PrivateRoute from "../components/Provider/PrivateRoute";
+import Custome from "../../Custome";
 
 export const allRoutes = createBrowserRouter([
 
@@ -53,6 +54,10 @@ export const allRoutes = createBrowserRouter([
                 path: '/update/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/vehicles/${params.id}`),
                 element: <Update> </Update>
+            },
+            {
+                path: '*',
+                element: <Custome> </Custome>
             }
         ]
     },

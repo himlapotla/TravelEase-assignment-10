@@ -15,7 +15,6 @@ const Footer = () => {
                             Rent the vehicles in your afordable price.
                         </p>
 
-
                     </div>
 
                     <div>
