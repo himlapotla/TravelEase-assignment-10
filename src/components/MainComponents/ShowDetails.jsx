@@ -18,7 +18,7 @@ const ShowDetails = ({ vehicles }) => {
         }
 
         axios
-            .post("http://localhost:3000/post-book", bookData)
+            .post("https://travel-ease-server-hazel.vercel.app/post-book", bookData)
             .then((res) => {
                 toast.success("This vehicle is booked.")
             })

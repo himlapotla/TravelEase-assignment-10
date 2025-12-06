@@ -22,7 +22,6 @@ const ShowAllVehicles = ({ vehicles }) => {
 
                 <Link to={`/detailVehicles/${vehicles._id}`}> <button className='btn font-semibold bg-amber-400 w-full my-2'> View Details </button> </Link>
 
-
             </div>
         </div>
 

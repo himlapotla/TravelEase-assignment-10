@@ -25,7 +25,7 @@ const AddVehicles = () => {
     }
 
     axios
-      .post("http://localhost:3000/post-vehicles", vehicleData)
+      .post("https://travel-ease-server-hazel.vercel.app/post-vehicles", vehicleData)
       .then((res) => {
         form.reset();
         toast.success("Vehicle is added successfully.")
