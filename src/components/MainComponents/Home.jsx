@@ -1,13 +1,16 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ShowSix from './ShowSix'
 import Hero from './Hero'
 import TopVehicles from './TopVehicles'
 import About from './About'
+import { motion } from 'framer-motion'
+import { AllContext } from '../Provider/AuthProvider'
 
 const Home = () => {
 
     const [vehicles, setVehicles] = useState([])
+    const {pageVariants, pageTransition} = useContext(AllContext)
 
     useEffect(() => {
         axios.get('http://localhost:3000/show-all-vehicles-six')
@@ -17,7 +20,9 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
+
+            
 
             <Hero> </Hero>
 
@@ -37,7 +42,7 @@ const Home = () => {
             <TopVehicles> </TopVehicles>
 
             
-        </div>
+        </motion.div>
     )
 }
 

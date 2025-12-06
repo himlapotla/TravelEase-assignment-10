@@ -19,7 +19,7 @@ const Hero = () => {
     return (
         <div className=''>
             <div
-                className="hero min-h-90"
+                className="hero min-h-100"
                 style={{
                     backgroundImage:
                         "url(https://i.ibb.co.com/dwqfbyRj/car-rental-agent-handing-keys-to-customer-vehicle-lot-background-clear-communication-car-rental-agen.webp)",

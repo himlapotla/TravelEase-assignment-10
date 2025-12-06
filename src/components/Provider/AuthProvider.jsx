@@ -66,6 +66,18 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
+    const pageVariants = {
+        initial: { opacity: 0, x: "-100vw" },
+        in: { opacity: 1, x: 0 },
+        out: { opacity: 0, x: "100vw" },
+    }
+
+    const pageTransition = {
+        type: "tween",
+        ease: "anticipate",
+        duration: 3,
+    }
+
 
     const info = {
         loading,
@@ -81,6 +93,9 @@ const AuthProvider = ({ children }) => {
         setLoading,
         changeColor,
         color,
+        pageVariants,
+        pageTransition,
+
     }
 
     return (

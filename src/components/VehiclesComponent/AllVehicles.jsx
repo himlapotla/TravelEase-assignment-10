@@ -1,12 +1,16 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ShowAllVehicles from './ShowAllVehicles'
+import { motion } from 'framer-motion'
+import { AllContext } from '../Provider/AuthProvider'
+
 
 const AllVehicles = () => {
 
   const [vehicles, setVehicles] = useState([])
   const [filtered, setFiltered] = useState([])
   const [sortType, setSortType] = useState("")
+  const {pageVariants, pageTransition} = useContext(AllContext)
 
   useEffect(() => {
     axios.get('http://localhost:3000/show-all-vehicles')
@@ -31,6 +35,8 @@ const AllVehicles = () => {
   }, [sortType, vehicles])
 
   return (
+
+      <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
     <div className='w-11/12 mx-auto pt-10'>
 
       <div className="flex justify-end gap-4 mb-6">
@@ -56,6 +62,7 @@ const AllVehicles = () => {
       </div>
 
     </div>
+    </motion.div>
   )
 }
 
