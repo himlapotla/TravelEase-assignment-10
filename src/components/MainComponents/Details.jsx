@@ -6,11 +6,16 @@ import ShowDetails from './ShowDetails'
 const Details = () => {
 
     const { id } = useParams()
-    const [vehicles, setVehicles] = useState([])
+    const [vehicles, setVehicles] = useState([]) 
 
     useEffect(() => {
-        axios.get(`https://travel-ease-server-hazel.vercel.app/${id}`)
-            .then(res => setVehicles(res.data))
+        axios.get(`https://travel-ease-server-hazel.vercel.app/vehicles/${id}`)
+            .then(res => {
+                setVehicles(res.data)
+                console.log(res.data);
+            })
+            
+            
     }, [id])
 
     return (
