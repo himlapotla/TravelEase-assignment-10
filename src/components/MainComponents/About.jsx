@@ -6,7 +6,7 @@ const About = () => {
     <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
       <div>
-        <h2 className="text-4xl font-bold mb-4">Make Your Journey Easier with TravelEase</h2>
+        <p className="text-4xl font-bold mb-4">Make Your Journey Easier with TravelEase</p>
         <p className="text-gray-600 text-lg leading-relaxed">
           TravelEase is your trusted platform for renting reliable vehicles with ease.
           Enjoy smooth bookings, flexible travel choices, and a comfortable ride experience—

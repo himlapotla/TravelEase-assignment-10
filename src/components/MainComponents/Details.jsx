@@ -14,7 +14,7 @@ const Details = () => {
     }, [id])
 
     return (
-        <div>
+        <div className='pb-12'>
             {
                 vehicles.map(vehicles => <ShowDetails key={vehicles._id} vehicles={vehicles}> </ShowDetails>)
             }

@@ -38,7 +38,7 @@ const Hero = () => {
                         </p>
 
                         <Link to={'/allVehicles'}>
-                            <button className="btn bg-amber-400 text-black btn-primary">
+                            <button className="btn bg-amber-400 text-black">
                                 All Vehicles
                             </button>
                         </Link>

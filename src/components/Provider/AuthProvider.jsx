@@ -12,6 +12,33 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null)
     const [mail, setMail] = useState(null)
+    // const [color, setColor] = useState("light-mode")
+    const [color, setColor] = useState(localStorage.getItem("bodyColor") || "light-mode")
+
+
+    // ................................................................
+
+    const changeColor = () => {
+        if (color === "light-mode") {
+            setColor("dark-mode")
+        }
+        else {
+            setColor("light-mode")
+        }
+    }
+
+
+    // useEffect(()=> {
+    //     document.querySelector("body").className = color
+    // }, [color])
+
+    useEffect(() => {
+        document.querySelector("body").className = color;
+        localStorage.setItem("bodyColor", color); // save theme
+    }, [color]);
+
+
+    // ................................................................
 
     const createUser = (email, Password) => {
         return createUserWithEmailAndPassword(auth, email, Password)
@@ -51,6 +78,8 @@ const AuthProvider = ({ children }) => {
         logOutt,
         logIn,
         setLoading,
+        changeColor,
+        color,
     }
 
     return (
@@ -61,3 +90,4 @@ const AuthProvider = ({ children }) => {
 }
 
 export default AuthProvider
+

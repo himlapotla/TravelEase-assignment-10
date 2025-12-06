@@ -17,7 +17,7 @@ const AllVehicles = () => {
   }, [])
 
   return (
-    <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-10'>
+    <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-10 pb-13'>
       {
         vehicles.map(vehicles => <ShowAllVehicles vehicles={vehicles}> </ShowAllVehicles> )
       }

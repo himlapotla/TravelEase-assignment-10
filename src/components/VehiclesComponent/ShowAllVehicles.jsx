@@ -2,11 +2,13 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const ShowAllVehicles = ({ vehicles }) => {
+
+    console.log('hiii',vehicles.coverImage)
     return (
 
         <div >
 
-            <div className="max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-xl mt-10 border-3 border-amber-400 ">
+            <div className="card max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-xl mt-10 border-3 border-amber-400 ">
                 <div className="w-full h-60 overflow-hidden rounded-lg mb-4">
                     <img src={vehicles.coverImage} className="w-full h-full object-cover" />
                 </div>
@@ -19,7 +21,7 @@ const ShowAllVehicles = ({ vehicles }) => {
                 <p><span className="font-semibold">Availability:</span> {vehicles.availability}</p>
                 <p className="mt-2"><span className="font-semibold">Description:</span> {vehicles.description}</p>
 
-                <Link to={`/detailVehicles/${vehicles._id}`}> <button className='btn font-semibold bg-amber-400 w-full '> View Details </button> </Link>
+                <Link to={`/detailVehicles/${vehicles._id}`}> <button className='btn font-semibold bg-amber-400 w-full my-2'> View Details </button> </Link>
 
 
             </div>

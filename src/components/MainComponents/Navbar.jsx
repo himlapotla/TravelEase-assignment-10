@@ -1,10 +1,11 @@
 import { use, useContext } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { AllContext } from '../Provider/AuthProvider'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 const Navbar = () => {
 
-    const { user, logOutt } = useContext(AllContext)
+    const { user, logOutt, changeColor, color } = useContext(AllContext)
     const navigate = useNavigate()
 
     const links = <>
@@ -25,11 +26,11 @@ const Navbar = () => {
 
     return (
         <div className=' bg-gradient-to-r from-amber-400 to-amber-500'>
-            {
+            {/* {
                 user ? user.email : 'nai'
-            }
+            } */}
 
-            <div className="navbar w-15/16 mx-auto">
+            <div className="navbar w-15/16 mx-auto flex items-center py-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,7 +44,7 @@ const Navbar = () => {
                             </div>
                         </ul>
                     </div>
-                    <Link to={'/'} className=" text-xl font-bold text-amber-700"> TravelEase </Link>
+                    <Link to={'/'} className=" text-2xl font-bold text-amber-700"> TravelEase </Link>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -55,8 +56,10 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end gap-3">
+                    <div className='text-3xl px-3' onClick={changeColor}> {color === "light-mode" ? <FaMoon> </FaMoon> : <FaSun></FaSun>} </div>
+
                     {
-                        <img className='w-3/12 md:w-2/12 lg:w-1/12 rounded-4xl cursor-pointer' title={user ? user.displayName : ' '} src={user ? user.photoURL : 'nai' } alt="" />
+                        <img className='w-3/12 md:w-2/12 lg:w-1/12 rounded-4xl cursor-pointer' title={user ? user.displayName : ' '} src={user ? user.photoURL : 'nai'} alt="" />
                     }
 
                     {
@@ -70,3 +73,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+

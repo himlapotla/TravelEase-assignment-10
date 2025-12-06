@@ -34,7 +34,7 @@ const MyVehicles = () => {
 
       {
         Vehicles.length == 0 ? <Empty> </Empty> : 
-        <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-10'>
+        <div className='grid grid-cols-4 w-11/12 mx-auto gap-3 pt-3 pb-13'>
           {
             Vehicles.map(vehicles => <ShowMyVehicles vehicles={vehicles}> </ShowMyVehicles>)
           } 
