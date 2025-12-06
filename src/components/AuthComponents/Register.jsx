@@ -6,7 +6,7 @@ import { AllContext } from '../Provider/AuthProvider'
 
 const Register = () => {
 
-  const { createUser, googleRegister, loading, setUser } = useContext(AllContext)
+  const { createUser, googleRegister, updateUserProfile, loading, setUser } = useContext(AllContext)
   const navigate = useNavigate()
   const [error, setError] = useState('')
   const [show, setShow] = useState(false)
@@ -54,15 +54,18 @@ const Register = () => {
     else {
       createUser(email, pass)
         .then((res) => {
-          toast.success("You registered successfully")
+          
           updateUserProfile({ displayName: name, photoURL: photo })
             .then(() => {
               setUser({ ...res.user, displayName: name, photoURL: photo })
             })
           navigate('/')
+          toast.success("You registered successfully")
 
         })
         .catch((err) => {
+          console.log(err);
+          
           setError('This user/email is already registered')
         })
     }

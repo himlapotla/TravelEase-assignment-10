@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa'
 import Loading from '../Loading'
-import { toast } from 'react-toastify'
 import { AllContext } from '../Provider/AuthProvider'
+import { toast } from 'react-toastify'
 
 const Login = () => {
 
@@ -26,6 +26,7 @@ const Login = () => {
       .then((result) => {
         setUser(result.user)
         navigate(`${location.state ? location.state : '/'}`)
+        toast.success("You are Logged in.")
       })
   }
 
@@ -45,7 +46,7 @@ const Login = () => {
       .then((res) => {
         setUser(res.user)
         navigate(`${location.state ? location.state : '/'}`)
-        toast.success("You are logged in")
+        toast
       })
       .catch((err) => {
         setErr(err)

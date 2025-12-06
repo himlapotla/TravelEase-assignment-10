@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router'
 import { AllContext } from '../Provider/AuthProvider'
+import { toast } from 'react-toastify'
 
 const Update = () => {
 
@@ -32,7 +33,7 @@ const Update = () => {
             .patch(`http://localhost:3000/vehicles-update/${id}`, updateData)
             .then((res) => {
                 console.log(res.data);
-                // setVehicles(res.data)
+                toast.success("Vehcile updated successfully.")
             })
     }
 

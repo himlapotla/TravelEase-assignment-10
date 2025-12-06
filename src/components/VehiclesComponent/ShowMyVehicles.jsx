@@ -25,7 +25,7 @@ const ShowMyVehicles = ({ vehicles }) => {
                     .then(res => {
                         Swal.fire({
                             title: "Deleted!",
-                            text: "Your file has been deleted. Please refresh the page.",
+                            text: "Your data has been deleted. Please refresh the page.",
                             icon: "success"
                         });
                     })

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import AllVehicles from './AllVehicles';
 import { AllContext } from '../Provider/AuthProvider';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddVehicles = () => {
 
@@ -28,6 +29,7 @@ const AddVehicles = () => {
       .then((res) => {
         console.log(res.data);
         form.reset();
+        toast.success("Vehicle is added successfully.")
       })
 
   }

@@ -28,13 +28,9 @@ const AuthProvider = ({ children }) => {
     }
 
 
-    // useEffect(()=> {
-    //     document.querySelector("body").className = color
-    // }, [color])
-
     useEffect(() => {
         document.querySelector("body").className = color;
-        localStorage.setItem("bodyColor", color); // save theme
+        localStorage.setItem("bodyColor", color);
     }, [color]);
 
 
@@ -56,6 +52,10 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    const updateUserProfile = (displayName, photoURL) => {
+        return updateProfile(auth.currentUser, displayName, photoURL)
+    }
+
     useEffect(() => {
         const unsubscrib = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
@@ -73,6 +73,7 @@ const AuthProvider = ({ children }) => {
         mail,
         createUser,
         googleRegister,
+        updateUserProfile,
         setMail,
         setUser,
         logOutt,

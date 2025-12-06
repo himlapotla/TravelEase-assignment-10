@@ -2,7 +2,7 @@ import React from 'react'
 
 const TopVehicles = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-3 pb-12'>
             <div className="card max-w-3xl mx-auto p-2 bg-white shadow-lg rounded-xl border-3 border-amber-400">
                 <div className="w-full h-60 overflow-hidden rounded-lg mb-4">
                     <img src="https://i.ibb.co.com/xqvVQ8mC/large-Suzuki-Gixxer-price-review-9ee36648ef.webp" className="w-full h-full object-cover" />

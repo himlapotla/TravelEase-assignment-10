@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useContext } from 'react'
 import { AllContext } from '../Provider/AuthProvider'
+import { toast } from 'react-toastify'
 
 const ShowDetails = ({ vehicles }) => {
 
@@ -19,10 +20,9 @@ const ShowDetails = ({ vehicles }) => {
         axios
             .post("http://localhost:3000/post-book", bookData)
             .then((res) => {
-                console.log(res.data);
+                console.log(res.data)
+                toast.success("This vehicle is booked.")
             })
-
-
     }
 
     return (
