@@ -21,7 +21,7 @@ const ShowMyVehicles = ({ vehicles }) => {
 
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:3000/delete/${id}`)
+                axios.delete(`https://travel-ease-server-hazel.vercel.app/delete/${id}`)
                     .then(res => {
                         Swal.fire({
                             title: "Deleted!",

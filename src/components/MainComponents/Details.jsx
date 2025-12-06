@@ -9,7 +9,7 @@ const Details = () => {
     const [vehicles, setVehicles] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/vehicles/${id}`)
+        axios.get(`https://travel-ease-server-hazel.vercel.app/${id}`)
             .then(res => setVehicles(res.data))
     }, [id])
 

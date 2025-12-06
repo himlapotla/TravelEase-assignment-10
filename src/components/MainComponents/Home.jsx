@@ -13,7 +13,7 @@ const Home = () => {
     const {pageVariants, pageTransition} = useContext(AllContext)
 
     useEffect(() => {
-        axios.get('http://localhost:3000/show-all-vehicles-six')
+        axios.get('https://travel-ease-server-hazel.vercel.app/show-all-vehicles-six')
             .then(res => {
                 setVehicles(res.data)
             })

@@ -11,7 +11,7 @@ const MyBooking = () => {
 
   useEffect(() => {
 
-    axios.get(`http://localhost:3000/show-all-my-book?email=${user && user.email}`)
+    axios.get(`https://travel-ease-server-hazel.vercel.app/show-all-my-book?email=${user && user.email}`)
       .then(res => {
 
         setVehicles(res.data)

@@ -29,7 +29,7 @@ const Update = () => {
         }
         
         axios
-            .patch(`http://localhost:3000/vehicles-update/${id}`, updateData)
+            .patch(`https://travel-ease-server-hazel.vercel.app/vehicles-update/${id}`, updateData)
             .then((res) => {
                 toast.success("Vehcile updated successfully.")
             })

@@ -15,7 +15,7 @@ const MyVehicles = () => {
 
     if (!user) return 
 
-    axios.get(`http://localhost:3000/show-all-my-vehicles?email=${user && user.email}`)
+    axios.get(`https://travel-ease-server-hazel.vercel.app/show-all-my-vehicles?email=${user && user.email}`)
       .then(res => {
 
         setVehicles(res.data)

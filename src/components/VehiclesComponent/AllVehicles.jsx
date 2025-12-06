@@ -13,7 +13,7 @@ const AllVehicles = () => {
   const {pageVariants, pageTransition} = useContext(AllContext)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/show-all-vehicles')
+    axios.get('https://travel-ease-server-hazel.vercel.app/show-all-vehicles')
       .then(res => {
         setVehicles(res.data)
         setFiltered(res.data)
