@@ -5,4 +5,4 @@ TravelEase is a vehicle renting website, som features of it --
 4. User can delete their vehicle
 5. Users interaction is very smoth with TravelEase
 
-Live URL -- https://meek-empanada-eb439a.netlify.app/
+Live URL -- https://aesthetic-shortbread-14933d.netlify.app/
