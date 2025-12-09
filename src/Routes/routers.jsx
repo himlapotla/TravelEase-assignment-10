@@ -52,7 +52,7 @@ export const allRoutes = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/vehicles/${params.id}`),
+                loader: ({params}) => fetch(`https://travel-ease-server-hazel.vercel.app/vehicles/${params.id}`),
                 element: <Update> </Update>
             },
             {
